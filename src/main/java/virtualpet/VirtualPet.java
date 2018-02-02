@@ -21,7 +21,7 @@ public class VirtualPet {
 	}
 
 	public int feed() {
-		setHunger(getHunger() + 10);
+		setHunger(getHunger() - 10);
 		return getHunger();
 	}
 	public String getName() {

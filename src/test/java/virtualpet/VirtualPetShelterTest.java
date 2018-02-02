@@ -44,6 +44,18 @@ public class VirtualPetShelterTest {
 		assertThat(0, is(retrievedCollection.size()));
 	}
 	
-	
+	@Test
+	public void feedAllPetsInShelter() {
+		virtualShelterUnderTest.addPet(testPet1);
+		virtualShelterUnderTest.addPet(new VirtualPet("Second Pet Name", "Second Description"));
+		virtualShelterUnderTest.addPet(new VirtualPet("Third Pet Name", "Second Description"));
+		virtualShelterUnderTest.feedAllPets();
+		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
+		assertThat(retrievedPet.getHunger(), is(40));
+		retrievedPet = virtualShelterUnderTest.getPetByName("Second Test Name");
+		assertThat(retrievedPet.getHunger(), is(40));
+		retrievedPet = virtualShelterUnderTest.getPetByName("Third Test Name");
+		assertThat(retrievedPet.getHunger(), is(40));
+	}
 
 }

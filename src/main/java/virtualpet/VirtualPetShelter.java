@@ -26,4 +26,8 @@ public class VirtualPetShelter {
 	public void adopt(String petName) {
 		petList.remove(petName);
 	}
+
+	public void feedAllPets() {
+		petList.values().forEach(VirtualPet::feed);
+	}
 }
