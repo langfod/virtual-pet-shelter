@@ -1,6 +1,7 @@
 package virtualpet;
 
 import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 
@@ -19,7 +20,8 @@ public class VirtualPetTest {
 
 	@Test
 	public void constructorNameAndDescriptionAndAttributes() {
-		assertNotNull(petUnderTest);
+		VirtualPet newPet = new VirtualPet("Pet Name", "Pet Desciption", 10 ,20 ,99);
+		assertEquals(99,newPet.getBoredom());
 	}
 
 	@Test
@@ -40,5 +42,11 @@ public class VirtualPetTest {
 	public void testWater() {
 		petUnderTest.water();
 		assertThat(petUnderTest.getThirst(), is(35));
+	}
+	
+	@Test
+	public void testPlayWith() {
+		petUnderTest.playWith();
+		assertThat(petUnderTest.getBoredom(), is(50));
 	}
 }

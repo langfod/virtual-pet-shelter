@@ -24,12 +24,17 @@ public class VirtualPet {
 		setHunger(getHunger() - 10);
 		return getHunger();
 	}
-	
+
 	public int water() {
 		setThirst(getThirst() - 10);
 		return getThirst();
 	}
-	
+
+	public int playWith() {
+		setBoredom(getBoredom() - 10);
+		return getBoredom();
+	}
+
 	public String getName() {
 		return name;
 	}
