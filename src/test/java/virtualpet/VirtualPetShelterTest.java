@@ -26,6 +26,15 @@ public class VirtualPetShelterTest {
 		assertThat(1, is(retrievedCollection.size()));
 	}
 	
+	@Test 
+	public void shouldAllowIntakeOfMultiplePetsandRetrieveCollection() {
+		virtualShelterUnderTest.addPet(testPet1);
+		virtualShelterUnderTest.addPet(new VirtualPet("Second Pet Name", "Second Description"));
+		virtualShelterUnderTest.addPet(new VirtualPet("Third Pet Name", "Second Description"));
+		Collection<VirtualPet> retrievedCollection = virtualShelterUnderTest.getAllPets();
+		assertThat(3, is(retrievedCollection.size()));
+	}
+	
 	
 	@Test
 	public void shouldAllowAdoptionOfPetByName() {
