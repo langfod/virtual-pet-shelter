@@ -26,5 +26,4 @@ public class VirtualPetShelter {
 	public void adopt(String petName) {
 		petList.remove(petName);
 	}
-
 }

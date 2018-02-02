@@ -44,5 +44,6 @@ public class VirtualPetShelterTest {
 		assertThat(0, is(retrievedCollection.size()));
 	}
 	
+	
 
 }

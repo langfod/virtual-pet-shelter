@@ -20,6 +20,10 @@ public class VirtualPet {
 		this.setBoredom(boredom);
 	}
 
+	public int feed() {
+		setHunger(getHunger() + 10);
+		return getHunger();
+	}
 	public String getName() {
 		return name;
 	}
