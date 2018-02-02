@@ -30,4 +30,8 @@ public class VirtualPetShelter {
 	public void feedAllPets() {
 		petList.values().forEach(VirtualPet::feed);
 	}
+
+	public void waterAllPets() {
+		petList.values().forEach(VirtualPet::water);	
+	}
 }

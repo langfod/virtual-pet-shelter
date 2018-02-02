@@ -25,8 +25,8 @@ public class VirtualPetTest {
 	@Test
 	public void checkInitialValues() {
 		assertThat(petUnderTest.getHunger(), is(50));
-		assertThat(petUnderTest.getThirst(), is(50));
-		assertThat(petUnderTest.getBoredom(), is(50));
+		assertThat(petUnderTest.getThirst(), is(45));
+		assertThat(petUnderTest.getBoredom(), is(60));
 
 	}
 
@@ -34,5 +34,11 @@ public class VirtualPetTest {
 	public void testFeed() {
 		petUnderTest.feed();
 		assertThat(petUnderTest.getHunger(), is(40));
+	}
+	
+	@Test
+	public void testWater() {
+		petUnderTest.water();
+		assertThat(petUnderTest.getThirst(), is(35));
 	}
 }
