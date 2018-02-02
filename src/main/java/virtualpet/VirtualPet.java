@@ -9,7 +9,7 @@ public class VirtualPet {
 	private int boredom;
 
 	public VirtualPet(String name, String description) {
-		this(name,  description, 50, 50, 50);
+		this(name, description, 50, 50, 50);
 	}
 
 	public VirtualPet(String name, String description, int hunger, int thirst, int boredom) {
