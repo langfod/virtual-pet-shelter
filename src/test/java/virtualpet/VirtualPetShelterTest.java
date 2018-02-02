@@ -7,10 +7,16 @@ import org.junit.Test;
 
 public class VirtualPetShelterTest {
 	
-	VirtualPetShelter  testShelter = new VirtualPetShelter();
+	VirtualPetShelter  virtualShelterUnderTest = new VirtualPetShelter();
+	VirtualPet testPet1 = new VirtualPet("Test Name", "Test Description");
+	
 	@Test
-	public void createVirtualPetShelterObject() {
+	public void shouldAllowIntakeOfPet() {
 		
+		
+		virtualShelterUnderTest.addPet(testPet1);
+		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
+		assertThat(retrievedPet, is(testPet1));		
 	}
 
 }
