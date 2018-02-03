@@ -86,6 +86,17 @@ public class VirtualPetShelterTest {
 		assertThat(retrievedPet.getBoredom(), is(50));
 	}
 	
+	@Test public void checkDefaulttoString() {
+		assertThat(virtualShelterUnderTest.toString(), is("Acme Pet Shelter"));
+	}
+	
+	@Test public void checkDescritpionConstructorToString() {
+		String testDescription = "New Description";
+		virtualShelterUnderTest = new VirtualPetShelter(testDescription);
+
+		assertThat(virtualShelterUnderTest.toString(), is(testDescription));
+	}
+	
 
 	
 }

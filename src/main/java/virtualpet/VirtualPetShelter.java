@@ -6,9 +6,19 @@ import java.util.Map;
 
 public class VirtualPetShelter {
 
+	String description;
 	Map<String, VirtualPet> petList = new HashMap<>();
 
 	public VirtualPetShelter() {
+		this("Acme Pet Shelter");
+	}
+
+	public VirtualPetShelter(String description) {
+		setDescription(description);
+	}
+
+	private void setDescription(String description) {
+		this.description = description;
 	}
 
 	public void addPet(VirtualPet pet) {
@@ -32,10 +42,15 @@ public class VirtualPetShelter {
 	}
 
 	public void waterAllPets() {
-		petList.values().forEach(VirtualPet::water);	
+		petList.values().forEach(VirtualPet::water);
 	}
 
 	public void playWithAllPets() {
-		petList.values().forEach(VirtualPet::playWith);		
+		petList.values().forEach(VirtualPet::playWith);
+	}
+
+	@Override
+	public String toString() {
+		return description;
 	}
 }
