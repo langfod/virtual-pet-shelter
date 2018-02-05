@@ -1,3 +1,18 @@
+/*
+ * VirtualPetTest:
+ * 
+ * Junit test methods to test the VirtualPet class
+ *
+ * 
+ * Author: David Langford
+ * Date  : Feb 02, 2018
+ * 
+ * 
+ * Depends on:
+ * 
+ * VirtualPet
+ * 
+ */
 package virtualpet;
 
 import static org.hamcrest.Matchers.is;
@@ -20,8 +35,8 @@ public class VirtualPetTest {
 
 	@Test
 	public void constructorNameAndDescriptionAndAttributes() {
-		VirtualPet newPet = new VirtualPet("Pet Name", "Pet Desciption", 10 ,20 ,99);
-		assertEquals(99,newPet.getBoredom());
+		VirtualPet newPet = new VirtualPet("Pet Name", "Pet Desciption", 10, 20, 99);
+		assertEquals(99, newPet.getBoredom());
 	}
 
 	@Test
@@ -37,25 +52,25 @@ public class VirtualPetTest {
 		petUnderTest.feed();
 		assertThat(petUnderTest.getHunger(), is(30));
 	}
-	
+
 	@Test
 	public void testWater() {
 		petUnderTest.water();
 		assertThat(petUnderTest.getThirst(), is(25));
 	}
-	
+
 	@Test
 	public void testPlayWith() {
 		petUnderTest.playWith();
 		assertThat(petUnderTest.getBoredom(), is(40));
 	}
-	
-	@Test public void tickShouldUpdateValuesByThree() {
-		petUnderTest.tick();
-		assertThat(petUnderTest.getHunger(), is(63));
-		assertThat(petUnderTest.getThirst(), is(58));
-		assertThat(petUnderTest.getBoredom(), is(73));
 
-		
+	@Test
+	public void tickShouldUpdateValuesByThree() {
+		petUnderTest.tick();
+		assertThat(petUnderTest.getHunger(), is(55));
+		assertThat(petUnderTest.getThirst(), is(50));
+		assertThat(petUnderTest.getBoredom(), is(65));
+
 	}
 }

@@ -1,3 +1,19 @@
+/*
+ * VirtualPetShelterTest:
+ * 
+ * Junit test methods to test the VirtualPetShelter class 
+ *
+ * 
+ * Author: David Langford
+ * Date  : Feb 02, 2018
+ * 
+ * 
+ * Depends on:
+ * 
+ * VirtualPetShelter
+ * VirtualPet
+ */
+
 package virtualpet;
 
 import static org.hamcrest.Matchers.is;
@@ -103,13 +119,13 @@ public class VirtualPetShelterTest {
 		virtualShelterUnderTest.addPet(new VirtualPet("Second Pet Name", "Second Description", 70, 80, 90));
 		virtualShelterUnderTest.tick();
 		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
-		assertThat(retrievedPet.getHunger(), is(63));
-		assertThat(retrievedPet.getThirst(), is(58));
-		assertThat(retrievedPet.getBoredom(), is(73));
+		assertThat(retrievedPet.getHunger(), is(55));
+		assertThat(retrievedPet.getThirst(), is(50));
+		assertThat(retrievedPet.getBoredom(), is(65));
 		retrievedPet = virtualShelterUnderTest.getPetByName("Second Pet Name");
-		assertThat(retrievedPet.getHunger(), is(83));
-		assertThat(retrievedPet.getThirst(), is(93));
-		assertThat(retrievedPet.getBoredom(), is(103));
+		assertThat(retrievedPet.getHunger(), is(75));
+		assertThat(retrievedPet.getThirst(), is(85));
+		assertThat(retrievedPet.getBoredom(), is(95));
 	}
 
 }

@@ -1,3 +1,18 @@
+/*
+ * VirtualPet:
+ * 
+ * Object to hold attributes and actions for a virtual pet. 
+ *
+ * 
+ * Author: David Langford
+ * Date  : Feb 02, 2018
+ * 
+ * 
+ * Depends on:
+ * 
+ * 
+ */
+
 package virtualpet;
 
 public class VirtualPet {
@@ -36,9 +51,9 @@ public class VirtualPet {
 	}
 
 	public void tick() {
-		setHunger(getHunger() + 13);
-		setThirst(getThirst() + 13);
-		setBoredom(getBoredom() + 13);
+		setHunger(getHunger() + 5);
+		setThirst(getThirst() + 5);
+		setBoredom(getBoredom() + 5);
 	}
 
 	public String getName() {

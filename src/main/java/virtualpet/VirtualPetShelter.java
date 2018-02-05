@@ -1,3 +1,19 @@
+/*
+ * VirtualPetShelter:
+ * 
+ * Object to hold VirtualPet object and perform actions on them.
+ *
+ * 
+ * Author: David Langford
+ * Date  : Feb 02, 2018
+ * 
+ * 
+ * Depends on:
+ * 
+ * VirtualPet
+ * 
+ */
+
 package virtualpet;
 
 import java.util.Collection;
