@@ -35,26 +35,26 @@ public class VirtualPetTest {
 	@Test
 	public void testFeed() {
 		petUnderTest.feed();
-		assertThat(petUnderTest.getHunger(), is(40));
+		assertThat(petUnderTest.getHunger(), is(30));
 	}
 	
 	@Test
 	public void testWater() {
 		petUnderTest.water();
-		assertThat(petUnderTest.getThirst(), is(35));
+		assertThat(petUnderTest.getThirst(), is(25));
 	}
 	
 	@Test
 	public void testPlayWith() {
 		petUnderTest.playWith();
-		assertThat(petUnderTest.getBoredom(), is(50));
+		assertThat(petUnderTest.getBoredom(), is(40));
 	}
 	
 	@Test public void tickShouldUpdateValuesByThree() {
 		petUnderTest.tick();
-		assertThat(petUnderTest.getHunger(), is(53));
-		assertThat(petUnderTest.getThirst(), is(48));
-		assertThat(petUnderTest.getBoredom(), is(63));
+		assertThat(petUnderTest.getHunger(), is(63));
+		assertThat(petUnderTest.getThirst(), is(58));
+		assertThat(petUnderTest.getBoredom(), is(73));
 
 		
 	}

@@ -21,24 +21,24 @@ public class VirtualPet {
 	}
 
 	public int feed() {
-		setHunger(getHunger() - 10);
+		setHunger(getHunger() - 20);
 		return getHunger();
 	}
 
 	public int water() {
-		setThirst(getThirst() - 10);
+		setThirst(getThirst() - 20);
 		return getThirst();
 	}
 
 	public int playWith() {
-		setBoredom(getBoredom() - 10);
+		setBoredom(getBoredom() - 20);
 		return getBoredom();
 	}
 
 	public void tick() {
-		setHunger(getHunger() + 3);
-		setThirst(getThirst() + 3);
-		setBoredom(getBoredom() + 3);
+		setHunger(getHunger() + 13);
+		setThirst(getThirst() + 13);
+		setBoredom(getBoredom() + 13);
 	}
 
 	public String getName() {
