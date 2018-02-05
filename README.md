@@ -13,7 +13,7 @@ Actions include:
 5. Admit a pet - allow the user to enter info an a net is created in the shelter
 
 
-##Includes and Depends On
+## Includes and Depends On
 
 * VirtualPetShelter class 
 * VirtualPet class
