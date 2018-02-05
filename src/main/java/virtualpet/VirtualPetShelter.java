@@ -49,8 +49,13 @@ public class VirtualPetShelter {
 		petList.values().forEach(VirtualPet::playWith);
 	}
 
+	public void tick() {
+		petList.values().forEach(VirtualPet::tick);
+	}
+
 	@Override
 	public String toString() {
 		return description;
 	}
+
 }

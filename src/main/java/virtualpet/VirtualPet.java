@@ -35,6 +35,12 @@ public class VirtualPet {
 		return getBoredom();
 	}
 
+	public void tick() {
+		setHunger(getHunger() + 3);
+		setThirst(getThirst() + 3);
+		setBoredom(getBoredom() + 3);
+	}
+
 	public String getName() {
 		return name;
 	}

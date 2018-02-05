@@ -49,4 +49,13 @@ public class VirtualPetTest {
 		petUnderTest.playWith();
 		assertThat(petUnderTest.getBoredom(), is(50));
 	}
+	
+	@Test public void tickShouldUpdateValuesByThree() {
+		petUnderTest.tick();
+		assertThat(petUnderTest.getHunger(), is(53));
+		assertThat(petUnderTest.getThirst(), is(48));
+		assertThat(petUnderTest.getBoredom(), is(63));
+
+		
+	}
 }

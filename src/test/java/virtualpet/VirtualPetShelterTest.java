@@ -18,15 +18,15 @@ public class VirtualPetShelterTest {
 		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
 		assertThat(retrievedPet, is(testPet1));
 	}
-	
-	@Test 
+
+	@Test
 	public void shouldAllowIntakeOfPetandRetrieveCollection() {
 		virtualShelterUnderTest.addPet(testPet1);
 		Collection<VirtualPet> retrievedCollection = virtualShelterUnderTest.getAllPets();
 		assertThat(1, is(retrievedCollection.size()));
 	}
-	
-	@Test 
+
+	@Test
 	public void shouldAllowIntakeOfMultiplePetsandRetrieveCollection() {
 		virtualShelterUnderTest.addPet(testPet1);
 		virtualShelterUnderTest.addPet(new VirtualPet("Second Pet Name", "Second Description"));
@@ -34,8 +34,7 @@ public class VirtualPetShelterTest {
 		Collection<VirtualPet> retrievedCollection = virtualShelterUnderTest.getAllPets();
 		assertThat(3, is(retrievedCollection.size()));
 	}
-	
-	
+
 	@Test
 	public void shouldAllowAdoptionOfPetByName() {
 		virtualShelterUnderTest.addPet(testPet1);
@@ -43,7 +42,7 @@ public class VirtualPetShelterTest {
 		Collection<VirtualPet> retrievedCollection = virtualShelterUnderTest.getAllPets();
 		assertThat(0, is(retrievedCollection.size()));
 	}
-	
+
 	@Test
 	public void feedAllPetsInShelter() {
 		virtualShelterUnderTest.addPet(testPet1);
@@ -57,7 +56,7 @@ public class VirtualPetShelterTest {
 		retrievedPet = virtualShelterUnderTest.getPetByName("Third Pet Name");
 		assertThat(retrievedPet.getHunger(), is(40));
 	}
-	
+
 	@Test
 	public void waterAllPetsInShelter() {
 		virtualShelterUnderTest.addPet(testPet1);
@@ -71,7 +70,7 @@ public class VirtualPetShelterTest {
 		retrievedPet = virtualShelterUnderTest.getPetByName("Third Pet Name");
 		assertThat(retrievedPet.getThirst(), is(35));
 	}
-	
+
 	@Test
 	public void PlayWithAllPetsInShelter() {
 		virtualShelterUnderTest.addPet(testPet1);
@@ -85,18 +84,32 @@ public class VirtualPetShelterTest {
 		retrievedPet = virtualShelterUnderTest.getPetByName("Third Pet Name");
 		assertThat(retrievedPet.getBoredom(), is(50));
 	}
-	
-	@Test public void checkDefaulttoString() {
+
+	@Test
+	public void checkDefaulttoString() {
 		assertThat(virtualShelterUnderTest.toString(), is("Acme Pet Shelter"));
 	}
-	
-	@Test public void checkDescritpionConstructorToString() {
+
+	@Test
+	public void checkDescritpionConstructorToString() {
 		String testDescription = "New Description";
 		virtualShelterUnderTest = new VirtualPetShelter(testDescription);
-
 		assertThat(virtualShelterUnderTest.toString(), is(testDescription));
 	}
-	
 
-	
+	@Test
+	public void tickShouldupdateallPetsByThree() {
+		virtualShelterUnderTest.addPet(testPet1);
+		virtualShelterUnderTest.addPet(new VirtualPet("Second Pet Name", "Second Description", 70, 80, 90));
+		virtualShelterUnderTest.tick();
+		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
+		assertThat(retrievedPet.getHunger(), is(53));
+		assertThat(retrievedPet.getThirst(), is(48));
+		assertThat(retrievedPet.getBoredom(), is(63));
+		retrievedPet = virtualShelterUnderTest.getPetByName("Second Pet Name");
+		assertThat(retrievedPet.getHunger(), is(73));
+		assertThat(retrievedPet.getThirst(), is(83));
+		assertThat(retrievedPet.getBoredom(), is(93));
+	}
+
 }
