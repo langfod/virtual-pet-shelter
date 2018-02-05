@@ -50,11 +50,11 @@ public class VirtualPetShelterTest {
 		virtualShelterUnderTest.addPet(new VirtualPet("Third Pet Name", "Second Description"));
 		virtualShelterUnderTest.feedAllPets();
 		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
-		assertThat(retrievedPet.getHunger(), is(40));
+		assertThat(retrievedPet.getHunger(), is(30));
 		retrievedPet = virtualShelterUnderTest.getPetByName("Second Pet Name");
-		assertThat(retrievedPet.getHunger(), is(40));
+		assertThat(retrievedPet.getHunger(), is(30));
 		retrievedPet = virtualShelterUnderTest.getPetByName("Third Pet Name");
-		assertThat(retrievedPet.getHunger(), is(40));
+		assertThat(retrievedPet.getHunger(), is(30));
 	}
 
 	@Test
@@ -64,11 +64,11 @@ public class VirtualPetShelterTest {
 		virtualShelterUnderTest.addPet(new VirtualPet("Third Pet Name", "Second Description"));
 		virtualShelterUnderTest.waterAllPets();
 		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
-		assertThat(retrievedPet.getThirst(), is(35));
+		assertThat(retrievedPet.getThirst(), is(25));
 		retrievedPet = virtualShelterUnderTest.getPetByName("Second Pet Name");
-		assertThat(retrievedPet.getThirst(), is(35));
+		assertThat(retrievedPet.getThirst(), is(25));
 		retrievedPet = virtualShelterUnderTest.getPetByName("Third Pet Name");
-		assertThat(retrievedPet.getThirst(), is(35));
+		assertThat(retrievedPet.getThirst(), is(25));
 	}
 
 	@Test
@@ -78,11 +78,11 @@ public class VirtualPetShelterTest {
 		virtualShelterUnderTest.addPet(new VirtualPet("Third Pet Name", "Second Description"));
 		virtualShelterUnderTest.playWithAllPets();
 		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
-		assertThat(retrievedPet.getBoredom(), is(50));
+		assertThat(retrievedPet.getBoredom(), is(40));
 		retrievedPet = virtualShelterUnderTest.getPetByName("Second Pet Name");
-		assertThat(retrievedPet.getBoredom(), is(50));
+		assertThat(retrievedPet.getBoredom(), is(40));
 		retrievedPet = virtualShelterUnderTest.getPetByName("Third Pet Name");
-		assertThat(retrievedPet.getBoredom(), is(50));
+		assertThat(retrievedPet.getBoredom(), is(40));
 	}
 
 	@Test
@@ -103,13 +103,13 @@ public class VirtualPetShelterTest {
 		virtualShelterUnderTest.addPet(new VirtualPet("Second Pet Name", "Second Description", 70, 80, 90));
 		virtualShelterUnderTest.tick();
 		VirtualPet retrievedPet = virtualShelterUnderTest.getPetByName("Test Name");
-		assertThat(retrievedPet.getHunger(), is(53));
-		assertThat(retrievedPet.getThirst(), is(48));
-		assertThat(retrievedPet.getBoredom(), is(63));
+		assertThat(retrievedPet.getHunger(), is(63));
+		assertThat(retrievedPet.getThirst(), is(58));
+		assertThat(retrievedPet.getBoredom(), is(73));
 		retrievedPet = virtualShelterUnderTest.getPetByName("Second Pet Name");
-		assertThat(retrievedPet.getHunger(), is(73));
-		assertThat(retrievedPet.getThirst(), is(83));
-		assertThat(retrievedPet.getBoredom(), is(93));
+		assertThat(retrievedPet.getHunger(), is(83));
+		assertThat(retrievedPet.getThirst(), is(93));
+		assertThat(retrievedPet.getBoredom(), is(103));
 	}
 
 }
